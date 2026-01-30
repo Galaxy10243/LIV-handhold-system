@@ -1,0 +1,71 @@
+# ROS
+devel/
+build/
+logs/
+install/
+.catkin_workspace
+*.pyc
+*.pyo
+
+# C++
+*.o
+*.so
+*.a
+*.out
+build/
+cmake-build-*/
+
+# CMake
+CMakeCache.txt
+CMakeFiles/
+cmake_install.cmake
+*.cmake
+!CMakeLists.txt
+Makefile
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+
+# Catkin
+CATKIN_IGNORE
+
+# Build artifacts
+*.bag
+*.avi
+*.mp4
+
+# Captured images
+take_picture_ros/captured_images/*.jpg
+take_picture_ros/captured_images/*.png
+!take_picture_ros/captured_images/.gitkeep
+
+# SolidWorks temporary files
+*.SLDPRT~
+*.SLDASM~
+~$*.SLDPRT
+~$*.SLDASM
+
+# Livox
+*.lvx
+
+# Keil
+*.uvguix.*
+*.uvoptx
+*.bak
+*.dep
+*.crf
+*.d
+*.axf
+*.htm
+*.lnp
+*.lst
+*.map
+*.o
+*.obj
+Listings/
+Objects/

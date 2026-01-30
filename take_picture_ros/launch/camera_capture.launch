@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<launch>
+    <!-- Camera Spacebar Capture Node -->
+    <node name="camera_spacebar_capture" pkg="take_picture_ros" type="camera_spacebar_capture" output="screen">
+        <!-- Camera pipeline configuration -->
+        <param name="pipeline" value="v4l2src device=/dev/video0 ! image/jpeg, width=1600, height=1300, framerate=60/1 ! jpegdec ! videoconvert ! appsink sync=false drop=true max-buffers=1" />
+        
+        <!-- ROS topic name for publishing images -->
+        <param name="topic_name" value="/image_rgb" />
+        
+        <!-- Publishing rate in Hz -->
+        <param name="rate_hz" value="30" />
+        
+        <!-- Initial saved image count -->
+        <param name="saved_count" value="0" />
+    </node>
+</launch>

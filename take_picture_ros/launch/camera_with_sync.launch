@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<launch>
+    <!-- 相机驱动节点，启用时间同步 -->
+    <node 
+        pkg="take_picture_ros" 
+        type="camera_ros_driver_one_with_sync" 
+        name="camera_with_sync" 
+        output="screen">
+        
+        <!-- 相机话题名称 -->
+        <param name="topic_name" value="/camera/image_rgb" />
+        
+        <!-- GStreamer管道配置 -->
+        <param name="pipeline" value="v4l2src device=/dev/video0 ! image/jpeg, width=1600, height=1300, framerate=60/1 ! jpegdec ! videoconvert ! appsink sync=false drop=true max-buffers=1" />
+        
+        <!-- 发布频率 (Hz) -->
+        <param name="rate_hz" value="30" />
+        
+        <!-- 是否启用时间同步（从Livox共享内存读取时间戳） -->
+        <param name="enable_sync" value="true" />
+        
+    </node>
+</launch>
